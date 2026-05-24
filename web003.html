@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Chamroen Transport | Car Rental Koh Samui</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Swiper Slider -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  body{
+    font-family: 'Prompt', sans-serif;
+    scroll-behavior:smooth;
+  }
+	 *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f7fb;
+      color:#333;
+    }
+
+    header{
+      background:#0099cc;
+      color:white;
+      padding:20px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:32px;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:40px auto;
+    }
+
+    .cars{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .car-card{
+      background:white;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .car-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .car-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .car-info{
+      padding:20px;
+    }
+
+    .car-info h2{
+      margin-bottom:10px;
+      font-size:24px;
+    }
+
+    .price{
+      color:#009933;
+      font-size:20px;
+      margin-bottom:15px;
+      font-weight:bold;
+    }
+
+    .btn{
+      display:inline-block;
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:10px;
+      background:#25D366;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#1ebe5d;
+    }
+
+    footer{
+      margin-top:50px;
+      text-align:center;
+      padding:20px;
+      background:#eee;
+    }
+
+  .hero-slide{
+    height:100vh;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+  }
+
+  .hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+  }
+
+
+  .lang-btn.active{
+    background:#111827;
+    color:white;
+  }
+
+  
+  }
+
+</style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+<!-- NAVBAR -->
+<header class="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+	   <a class="navbar-brand" href="#">
+      <img src="https://lh3.googleusercontent.com/a-/ALV-UjVjtOnOkzEn1nxog3KABFJib28eHHu2ZidpIUTQUqeAIrf0sgI=w1905" alt="Bootstrap" width="100" height="100">
+    </a>
+    <div class="text-white text-2xl font-bold">
+      Chamroen Transport
+    </div>
+
+    <nav class="hidden md:flex gap-8 text-white">
+      <a href="#home" class="hover:text-yellow-400 transition">Home</a>
+      <a href="#cars" class="hover:text-yellow-400 transition">Cars</a>
+      <a href="#about" class="hover:text-yellow-400 transition">About</a>
+      <a href="#contact" class="hover:text-yellow-400 transition">Contact</a>
+    </nav>
+
+    <!-- LANGUAGE -->
+    <div class="flex gap-2">
+      <button class="lang-btn active px-3 py-1 rounded-lg text-sm bg-white text-black" onclick="changeLanguage('en')">EN</button>
+      <button class="lang-btn px-3 py-1 rounded-lg text-sm bg-white text-black" onclick="changeLanguage('th')">TH</button>
+    </div>
+
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home">
+
+  <div class="swiper heroSwiper">
+
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div
+          class="hero-slide"
+          style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920');"
+        >
+
+          <div class="hero-overlay"></div>
+
+          <div class="relative z-10 h-full flex items-center justify-center text-center text-white px-6">
+            <div>
+
+              <h1
+                class="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+                data-en="Explore Koh Samui In Comfort"
+                data-th="เที่ยวเกาะสมุยอย่างสะดวกสบาย"
+              >
+                Explore Koh Samui In Comfort
+              </h1>
+
+              <p
+                class="text-xl md:text-2xl mb-8"
+                data-en="Premium Car Rental • Airport Delivery • Best Rates"
+                data-th="รถเช่าราคากันเอง • ส่งฟรีสนามบิน • ราคาดีที่สุด"
+              >
+                Good price Car Rental • Airport Delivery • Best Rates
+              </p>
+
+              <a
+                href="https://wa.me/66980165405"
+                target="_blank"
+                class="bg-green-500 hover:bg-green-600 transition px-8 py-4 rounded-full text-lg font-semibold"
+              >
+                WhatsApp Booking
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div
+          class="hero-slide"
+          style="background-image:url('https://lh3.googleusercontent.com/-eJheu0PRp3V1tZMsc3_IQfb7a4r5PQm7zPRUrr0rhK9alWSDpfElde90aGh9lzXjMAtMocfsjcUUvyb9Q=w1021');"
+        >
+          <div class="hero-overlay"></div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div
+          class="hero-slide"
+          style="background-image:url('https://lh3.googleusercontent.com/LB2raaOQmA5MWNyss8LeKxYaVuZ4XV9C2oR70urmmPKuEJQGJAGS5GDQ7PxcMk286suP5rAN0spcmD0WHg=w777');"
+        >
+          <div class="hero-overlay"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+  </div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="py-20 bg-gray-100">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="bg-white rounded-3xl p-10 shadow-lg text-center">
+        <div class="text-5xl mb-4">✈️</div>
+
+        <h3
+          class="text-2xl font-bold mb-4"
+          data-en="Airport Delivery"
+          data-th="ส่งฟรีสนามบิน"
+        >
+          Airport Delivery
+        </h3>
+
+        <p
+          class="text-gray-600"
+          data-en="Free car delivery at Samui Airport"
+          data-th="บริการส่งรถฟรีที่สนามบินสมุย"
+        >
+          Free car delivery at Samui Airport
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-10 shadow-lg text-center">
+        <div class="text-5xl mb-4">🚘</div>
+
+        <h3
+          class="text-2xl font-bold mb-4"
+          data-en="New Vehicles"
+          data-th="รถใหม่ทุกคัน"
+        >
+          New Vehicles
+        </h3>
+
+        <p
+          class="text-gray-600"
+          data-en="Clean, insured and reliable cars"
+          data-th="สะอาด ปลอดภัย พร้อมประกัน"
+        >
+          Clean, insured and reliable cars
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-10 shadow-lg text-center">
+        <div class="text-5xl mb-4">📱</div>
+
+        <h3
+          class="text-2xl font-bold mb-4"
+          data-en="Fast Support"
+          data-th="ตอบแชทรวดเร็ว"
+        >
+          Fast Support
+        </h3>
+
+        <p
+          class="text-gray-600"
+          data-en="24/7 WhatsApp support"
+          data-th="ติดต่อ WhatsApp ได้ตลอด 24 ชั่วโมง"
+        >
+          24 hour WhatsApp support
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CARS -->
+<div class="container">
+
+    <div class="cars">
+
+      <!-- รถคันที่ 1 -->
+      <div class="car-card">
+        <img src="https://s359.kapook.com/pagebuilder/adfb0487-cb4e-4b2d-9695-d1eb81e9ba4d.jpg" alt="">
+        <div class="car-info">
+          <h2>Mazda2</h2>
+          <div class="price">1,000 ฿/Day</div>
+
+          <button class="btn"
+            onclick="sendWhatsApp('Mazda2','1,000 THB / Day')">
+            Book Now
+          </button>
+        </div>
+      </div>
+
+      <!-- รถคันที่ 2 -->
+      <div class="car-card">
+        <img src="https://mitsubishibryanston.co.za/wp-content/uploads/2025/05/xpander-front-1280x867.png" alt="">
+        <div class="car-info">
+          <h2>mitsubishi xpander cross</h2>
+          <div class="price">1,500 ฿/Day</div>
+
+          <button class="btn"
+            onclick="sendWhatsApp('Honda City','1,500 THB / Day')">
+            Book Now
+          </button>
+        </div>
+      </div>
+
+      <!-- รถคันที่ 3 -->
+      <div class="car-card">
+        <img src="https://ymimg1.b8cdn.com/resized/article/5523/pictures/3978225/listing_main_Toyota_Fortuner_2019__1_.jpg" alt="">
+        <div class="car-info">
+          <h2>Toyota Fortuner</h2>
+          <div class="price">2,300 ฿/Day</div>
+
+          <button class="btn"
+            onclick="sendWhatsApp('Toyota Fortuner','2,300 THB / Day')">
+            Book Now
+          </button>
+        </div>
+      </div>
+		 <!-- รถคันที่ 4 -->
+      <div class="car-card">
+        <img src="https://www.imc.co.th/img/model/640_2024110708181786.png" alt="">
+        <div class="car-info">
+          <h2>Mitsubishi Attrage</h2>
+          <div class="price">900 ฿/Day</div>
+
+          <button class="btn"
+            onclick="sendWhatsApp('Mitsubishi Attrage','900 THB / Day')">
+            Book Now
+          </button>
+        </div>
+      </div>
+		<!-- รถคันที่ 5 -->
+      <div class="car-card">
+        <img src="https://img.icarcdn.com/autospinn/body/000000071512_f6cddafc_c22d_4d6f_b7b9_5de1dd75df8f.jpg" alt="">
+        <div class="car-info">
+          <h2>Honda Civic 1.5 turbo el+</h2>
+          <div class="price">1,800 ฿/Day</div>
+
+          <button class="btn"
+            onclick="sendWhatsApp('Honda Civic 1.5 turbo el+','1,800 THB / Day')">
+            Book Now
+          </button>
+        </div>
+      </div>
+		<!-- รถคันที่ 6 -->
+      <div class="car-card">
+        <img src="https://honda-srisiam.com/wp-content/uploads/2023/02/Click125-WebsiteProductPhoto-ColorSection-Urban-G-R-685x426-1.webp" alt="">
+        <div class="car-info">
+          <h2>Honda Click 125</h2>
+          <div class="price">250 ฿/Day</div>
+
+          <button class="btn"
+            onclick="sendWhatsApp('Honda Click 125','250 THB / Day')">
+            Book Now
+          </button>
+        </div>
+      </div>
+		<!-- รถคันที่ 7 -->
+      <div class="car-card">
+        <img src="https://honda-srisiam.com/wp-content/uploads/2025/03/black-6.webp" alt="">
+        <div class="car-info">
+          <h2>Honda Click 160</h2>
+          <div class="price">350 ฿/Day</div>
+
+          <button class="btn"
+            onclick="sendWhatsApp('Honda Click 160','350 THB / Day')">
+            Book Now
+          </button>
+        </div>
+      </div>
+		<!-- รถคันที่ 8 -->
+      <div class="car-card">
+        <img src="https://img.autofun.co.th/file/d9c3934261904a90946309bb4e0734ae.jpg" alt="">
+        <div class="car-info">
+          <h2>Honda PCX 160</h2>
+          <div class="price">450 ฿/Day</div>
+
+          <button class="btn"
+            onclick="sendWhatsApp('Honda PCX 160','450 THB / Day')">
+            Book Now
+          </button>
+        </div>
+      </div>
+		<!-- รถคันที่ 9 -->
+      <div class="car-card">
+        <img src="https://api.hwcapis.com:12443/PRD.VDS.API.BB/Media/view/a01068ef3dd646bb919d90fd42c7303a" alt="">
+        <div class="car-info">
+          <h2>Honda ADV 350</h2>
+          <div class="price">800 ฿/Day</div>
+
+          <button class="btn"
+            onclick="sendWhatsApp('Honda ADV 350','800 THB / Day')">
+            Book Now
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Samui Car Rental
+  </footer>
+
+  <script>
+    function sendWhatsApp(carName, price){
+
+      // เปลี่ยนเป็นเบอร์ WhatsApp ของคุณ
+      const phoneNumber = "66980165405";
+
+      const message =
+`สนใจจองรถ
+🚗 รุ่น: ${carName}
+💰 ราคา: ${price}
+
+กรุณาติดต่อกลับครับ`;
+
+      const url =
+        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(url, "_blank");
+    }
+  </script>
+
+
+<!-- ABOUT -->
+<section id="about" class="bg-black text-white py-24">
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <div>
+
+        <h2
+          class="text-5xl font-bold mb-8"
+          data-en="Good Price Car Rental In Koh Samui"
+          data-th="บริการเช่ารถราคาดีในเกาะสมุย"
+        >
+          Scooter & Car Rental In Koh Samui
+        </h2>
+
+        <p
+          class="text-gray-300 leading-8 text-lg"
+          data-en="We provide reliable rental cars for tourists visiting Koh Samui. Easy booking via WhatsApp, airport delivery and professional service."
+          data-th="เราบริการรถเช่าคุณภาพสำหรับนักท่องเที่ยวในเกาะสมุย จองง่ายผ่าน WhatsApp พร้อมส่งรถฟรีสนามบินและบริการแบบมืออาชีพ"
+        >
+          We provide reliable rental cars for tourists visiting Koh Samui.
+        </p>
+
+      </div>
+
+      <img
+        src="https://lh3.googleusercontent.com/CAgqsVjkeWxwSMY6ngaOgpnB5gKO9_ZLP3ApIKuxGkcN9x1dBIVe5unbuePntr1lhXuV44WAwcSjNDbzig=w1063"
+        class="rounded-3xl shadow-2xl"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MAP -->
+<section class="py-24 bg-gray-100">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-12">
+
+      <h2
+        class="text-5xl font-bold mb-4"
+        data-en="Find Us"
+        data-th="แผนที่ร้าน"
+      >
+        Find Us
+      </h2>
+
+    </div>
+
+    <div class="rounded-3xl overflow-hidden shadow-2xl">
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4840.971030264979!2d100.07397317502563!3d9.573750790510935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3054fb06df93b1b9%3A0x9ad7edb5b45fde2c!2sChamroenTransportCarRent!5e1!3m2!1sth!2sth!4v1779610866217!5m2!1sth!2sth"
+        width="100%"
+        height="500"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 bg-white">
+
+  <div class="max-w-4xl mx-auto px-6 text-center">
+
+    <h2
+      class="text-5xl font-bold mb-8"
+      data-en="Contact Us"
+      data-th="ติดต่อเรา"
+    >
+      Contact Us
+    </h2>
+
+    <p class="text-2xl text-gray-600 mb-10">
+      WhatsApp: +66 98-016-5405
+    </p>
+
+    <a
+      href="https://wa.me/66980165405"
+      target="_blank"
+      class="inline-block bg-green-500 hover:bg-green-600 transition text-white text-2xl px-10 py-5 rounded-full font-semibold"
+    >
+      Chat on WhatsApp
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black text-white py-8 text-center">
+  © 2026 SAMUI DRIVE — All Rights Reserved
+</footer>
+
+<!-- FLOATING BUTTON -->
+
+
+<!-- SWIPER -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+  // SLIDER
+  const swiper = new Swiper(".heroSwiper", {
+    loop:true,
+
+    autoplay:{
+      delay:4000,
+      disableOnInteraction:false,
+    },
+
+    pagination:{
+      el:".swiper-pagination",
+      clickable:true,
+    }
+  });
+
+  // LANGUAGE SWITCH
+  function changeLanguage(lang){
+
+    const elements = document.querySelectorAll("[data-en]");
+
+    elements.forEach(el => {
+      el.innerHTML = el.getAttribute(`data-${lang}`);
+    });
+
+    document.querySelectorAll(".lang-btn").forEach(btn=>{
+      btn.classList.remove("active");
+    });
+
+    if(lang === "en"){
+      document.querySelectorAll(".lang-btn")[0].classList.add("active");
+    }else{
+      document.querySelectorAll(".lang-btn")[1].classList.add("active");
+    }
+  }
+
+</script>
+
+</body>
+</html>
